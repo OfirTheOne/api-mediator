@@ -1,0 +1,3 @@
+
+export const SDK_ENDPOINT_META = 'SDK_ENDPOINT_META';
+export const SDK_API_CLASS_META = 'SDK_API_CLASS_META';

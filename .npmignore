@@ -1,0 +1,9 @@
+/dist-dev
+/tests
+/src
+/lib
+/.vscode
+package-lock.json
+tsconfig.json
+tsconfig.build.json
+*.tgz
