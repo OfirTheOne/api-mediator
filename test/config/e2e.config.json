@@ -1,0 +1,19 @@
+{
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "../../test/e2e",
+    "testRegex": ".\\.(spec|test).ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    },
+    "coverageDirectory": "../../coverage",
+    "testEnvironment": "node"
+  }
