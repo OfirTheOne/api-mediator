@@ -1,3 +1,4 @@
+import { HttpPayloadType } from '../../models/app-scanner/http-payload-type';
 import { AppRouteing } from '../../models/app-routing';
 import { generate } from './service-sdk.template'
 
@@ -20,17 +21,17 @@ describe('service-sdk.template', () => {
               "payload": [
                 {
                   "name": "name",
-                  "type": "QUERY",
+                   "type": HttpPayloadType.QUERY,
                   "schemeName": "String"
                 },
                 {
                   "name": "age",
-                  "type": "QUERY",
+                  "type": HttpPayloadType.QUERY,
                   "schemeName": "Number"
                 },
                 {
                   "name": "userId",
-                  "type": "HEADERS",
+                  "type": HttpPayloadType.HEADERS,
                   "schemeName": "String"
                 }
               ]
@@ -42,7 +43,7 @@ describe('service-sdk.template', () => {
               "payload": [
                 {
                   "name": "fileName",
-                  "type": "PARAMS",
+                  "type": HttpPayloadType.PARAMS,
                   "schemeName": "String"
                 }
               ]
@@ -60,7 +61,7 @@ describe('service-sdk.template', () => {
               "payload": [
                 {
                   "name": "id",
-                  "type": "PARAMS",
+                  "type": HttpPayloadType.PARAMS,
                   "schemeName": "Number"
                 }
               ]
@@ -85,18 +86,18 @@ describe('service-sdk.template', () => {
     const expected = `
 declare class MyServiceSdk {
   api: {
-    CatsController: {
+    cats: {
       findAll: (
-        QUERY: { age: Number, name: String },
-        HEADERS: { userId: String }
+        query: { age: Number, name: String },
+        headers: { userId: String }
       ) => Promise<any>;
       uploadStuff: (
-        PARAMS: { fileName: String }
+        params: { fileName: String }
       ) => Promise<any>;
     },
-    DogsController: {
+    dogs: {
       getById: (
-        PARAMS: { id: Number }
+        params: { id: Number }
       ) => Promise<any>;
       findAll: () => Promise<any>;
       deleteStuff: () => Promise<any>;
